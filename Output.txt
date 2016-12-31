@@ -1,0 +1,37 @@
+[*] Processing http://datanerds.io/post/cassandra-no-row-consistency/index.html
+[*] Processing https://www.dnsleaktest.com/what-is-transparent-dns-proxy.html
+[*] Processing http://paulgraham.com/ideas.html
+[*] Processing http://html.net/tutorials/javascript/lesson1.php
+[*] Processing https://docs.oracle.com/javase/tutorial/java/data/strings.html
+[*] Processing http://www.cnn.com/2016/12/08/us/weather-winter-storm/index.html
+[*] Processing http://thehackernews.com/2016/12/ransomware-malware.html
+[*] Processing http://factore.ca/blog/435-marketing-automation-is-getting-out-of-hand.html
+[*] Processing http://www.businessinsider.com/paris-smog-problem-2016-12.html
+[*] Processing http://nymag.com/scienceofus/2016/12/lego-is-the-perfect-toy.html
+
+
+[+] Enter your search or press Enter key to exit program : technology settings video games
+1: https://www.dnsleaktest.com/what-is-transparent-dns-proxy.html                                  Words found 2 
+2: http://www.businessinsider.com/paris-smog-problem-2016-12.html                                  Words found 2 
+3: http://nymag.com/scienceofus/2016/12/lego-is-the-perfect-toy.html                               Words found 2 
+4: http://paulgraham.com/ideas.html                                                                Words found 1 
+5: http://www.cnn.com/2016/12/08/us/weather-winter-storm/index.html                                Words found 1 
+
+
+[+] Enter your search or press Enter key to exit program : This program is really cool
+1: https://docs.oracle.com/javase/tutorial/java/data/strings.html                                  Words found 1 
+2: http://paulgraham.com/ideas.html                                                                Words found 1 
+3: http://html.net/tutorials/javascript/lesson1.php                                                Words found 1 
+4: http://www.cnn.com/2016/12/08/us/weather-winter-storm/index.html                                Words found 1 
+
+
+[+] Enter your search or press Enter key to exit program : search engine is cool
+1: http://html.net/tutorials/javascript/lesson1.php                                                Words found 2 
+2: http://www.cnn.com/2016/12/08/us/weather-winter-storm/index.html                                Words found 2 
+3: https://docs.oracle.com/javase/tutorial/java/data/strings.html                                  Words found 1 
+4: http://paulgraham.com/ideas.html                                                                Words found 1 
+5: http://nymag.com/scienceofus/2016/12/lego-is-the-perfect-toy.html                               Words found 1 
+
+
+[+] Enter your search or press Enter key to exit program : 
+Thanks for searching. Exiting...

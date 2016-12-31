@@ -1,0 +1,98 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+public class SearchEngineDriver {
+	public static final String INPUTFILE = "WebPagesInput.txt"; 
+	
+	public static void main(String[] args) throws IOException {
+		Scanner kb = new Scanner(System.in);
+		
+		List<String> webaddresses = getFilesFromInput(INPUTFILE);
+		WebsiteProcessor wp = new WebsiteProcessor();
+		
+		Map<String, Map<String, Integer>> webpageToWords = new HashMap<String, Map<String, Integer>>();
+		
+//		webpage -> freqMap
+//		====
+//		WP1 -> test tes yawn
+//		WP2 -> yellow test
+//		WP3 -> tes test base
+		
+		Map<String, List<String>> wordsToWebpage = new HashMap<String, List<String>>();
+//		
+//		globaDict -> webpage
+//		====
+//		test -> [WP1, WP2, WP3]
+//		tes -> [WP1, WP3]
+//		teeth -> []
+		
+		for (String webpage: webaddresses) {
+			System.out.println("[*] Processing " + webpage);
+			
+			wp.setWebaddress(webpage);
+			wp.process();
+			String bodyContent = wp.getContent();
+			
+			String[] tokens = StringUtils.getTokens(bodyContent);
+			for (String token: tokens) {
+				System.out.print(token + " ");
+			}
+			Map<String, Integer> freqMap = StringUtils.buildFreqMap(tokens);
+			webpageToWords.put(webpage, freqMap);
+			
+			List<String> tmp;
+			String currWord;
+			
+			for (Map.Entry<String, Integer> wordEntry: freqMap.entrySet()) {
+				currWord = wordEntry.getKey();
+				
+				if (!wordsToWebpage.containsKey(currWord)) {
+					tmp = new ArrayList<String>();
+					tmp.add(webpage);
+					wordsToWebpage.put(currWord, tmp);
+				} else {
+					tmp = wordsToWebpage.get(currWord);
+					tmp.add(webpage);
+					wordsToWebpage.put(currWord, tmp);
+				}
+			}
+		}
+		
+		String input = "-";
+		
+		while (input != "") {
+			System.out.print("\n\n[+] Enter your search: ");
+			input = kb.nextLine(); // process input
+			String[] tokens = StringUtils.getTokens(input);
+			
+			// get all webpages that contain all the above tokens
+			// find the union between the above webpages
+			// show the results based on the webpage/word freq (ranking)
+		}
+	}
+	
+	@SuppressWarnings("resource")
+	public static List<String> getFilesFromInput(String filename) {
+		List<String> webAddresses = new ArrayList<String>();
+		
+		try {
+			FileReader in = new FileReader(filename);
+			BufferedReader br = new BufferedReader(in);
+			String line;
+			
+			while ((line = br.readLine()) != null) {
+				webAddresses.add(line);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return webAddresses;
+	}
+}
